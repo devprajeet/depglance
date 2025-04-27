@@ -3,7 +3,7 @@ import argparse
 from depglance.parser import parse_requirements
 from depglance.graph import generate_graph
 from depglance.scanner import scan_vulnerabilities
-from depglance.exporter import export_graph
+from depglance.exporter import export_graph_plotly
 
 def main():
     parser = argparse.ArgumentParser(description="Visualize Python dependencies.")
@@ -13,7 +13,8 @@ def main():
     packages = parse_requirements(args.requirements)
     vulnerabilities = scan_vulnerabilities(packages)
     graph = generate_graph(packages, vulnerabilities)
-    export_graph(graph)
+    export_graph_plotly(graph)
 
-# if __name__ == "__main__":
-#     main()
+
+if __name__ == "__main__":
+    main()

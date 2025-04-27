@@ -28,7 +28,7 @@ setup(
     packages=find_packages(),
     python_requires=">=3.7",
     install_requires=[
-        "pyvis",
+        "plotly",
         "requests",
         "networkx",
         "toml",  # <<< removed extra space here

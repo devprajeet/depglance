@@ -3,11 +3,19 @@ import socketserver
 import webbrowser
 import os
 
-def serve_html(file_path="dependency_graph.html", port=8000):
-    os.chdir(os.path.dirname(file_path) or '.')
+PORT = 8000
+DIRECTORY = "."
 
-    handler = http.server.SimpleHTTPRequestHandler
-    with socketserver.TCPServer(("", port), handler) as httpd:
-        print(f"🌐 Serving at http://localhost:{port}")
-        webbrowser.open(f"http://localhost:{port}/{os.path.basename(file_path)}")
+class Handler(http.server.SimpleHTTPRequestHandler):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, directory=DIRECTORY, **kwargs)
+
+if __name__ == "__main__":
+    # Automatically open the page
+    url = f"http://localhost:{PORT}/dependency_graph.html"
+
+    # Start server
+    with socketserver.TCPServer(("", PORT), Handler) as httpd:
+        print(f"Serving at {url}")
+        webbrowser.open(url)
         httpd.serve_forever()
