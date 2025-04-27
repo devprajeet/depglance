@@ -6,13 +6,18 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setup(
     name="depglance",
-    version="0.1.1",
+    version="0.1.3",
     author="Prajeet Singh",
     author_email="dev.prajeet2016@gmail.com",
     description="Visualize and analyze Python project dependencies with vulnerability highlights.",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/devprajeet/depglance",
+    entry_points={
+    'console_scripts': [
+        'depglance=depglance.cli:main',  # <--- Must match your src
+    ],
+    },
     project_urls={
         "Bug Tracker": "https://github.com/devprajeet/depglance/issues",
         "Source Code": "https://github.com/devprajeet/depglance",
@@ -32,5 +37,6 @@ setup(
         "pyvis",
         "requests",
         "networkx",
+        "toml ",
     ],
 )
