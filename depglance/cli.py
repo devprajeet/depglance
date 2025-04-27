@@ -15,5 +15,5 @@ def main():
     graph = generate_graph(packages, vulnerabilities)
     export_graph(graph)
 
-if __name__ == "__main__":
-    main()
+# if __name__ == "__main__":
+#     main()

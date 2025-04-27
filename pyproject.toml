@@ -8,7 +8,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "depglance"
-version = "0.1.4"
+version = "0.1.5"
 description = "Python Dependency Visualizer with Vulnerability Insights"
 readme = "README.md"
 requires-python = ">=3.7"
@@ -26,3 +26,5 @@ dependencies = [
 "Homepage" = "https://github.com/devprajeet/depglance"
 "Source" = "https://github.com/devprajeet/depglance"
 "Tracker" = "https://github.com/devprajeet/depglance/issues"
+
+
