@@ -6,7 +6,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setup(
     name="depglance",
-    version="0.1.3",
+    version="0.1.4",
     author="Prajeet Singh",
     author_email="dev.prajeet2016@gmail.com",
     description="Visualize and analyze Python project dependencies with vulnerability highlights.",
